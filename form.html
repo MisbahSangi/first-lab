@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    
+    <form onsubmit=" return validation()" action="formdata.html"    method="post">
+        <!-- Name Field -->
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name"><br><br>
+        
+        <!-- Email Field -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+        
+        <!-- Password Field -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter password"><br><br>
+        
+        <!-- Confirm Password Field -->
+        <label for="confirm-password">Confirm Password:</label><br>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" ><br><br>
+        <!-- Contact Field -->
+        <label for="contact">Contact:</label><br>
+        <input type="text" id="contact" name="contact" placeholder="Enter contact"><br><br>
+        
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+    </form>
+<script>
+    function validation()
+    {
+    let a=document.getElementById("name").value;
+    let b=document.getElementById("email").value;
+    let c=document.getElementById("password").value;
+    let d=document.getElementById("confirm-password").value;
+    let e=document.getElementById("contact").value;
+
+//All fields are mandatory
+    if(a=="" || b=="" || c=="" || d=="")
+    {
+        alert("All fields are mandatory");
+        return false;
+    }
+     else if(a!== a.toLowerCase()){
+         alert("Name should be in Lower letters")
+         return false;
+     }
+        //conatct condition
+    
+    else if(e.length !==10  || isNaN(e)){
+        alert("contact should be of 10 digits exactly")
+        return false;
+    }//password and confirm pass word should be same
+    else if(c!=d){
+        alert("please enter same password");
+        return false;
+    }
+     
+
+        else{
+            true;
+        }
+
+    }
+
+
+    
+</script>
+</body>
+</html>
+
